@@ -109,3 +109,73 @@ color: #000;
 .footer{
     box-shadow: 0px -2px 45px -14px rgba(0,0,0,0.75);
 }
+.login_form>label{
+    max-width: 160px;
+    margin-bottom: 10px;
+}
+.login_form>input{
+    max-width: 130px;
+    margin-bottom: 20px;
+
+}
+.register_form>label{
+    max-width: 160px;
+    margin-bottom: 10px;
+}
+.register_form>input{
+    max-width: 130px;
+    margin-bottom: 20px;
+
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 120px;
+    box-shadow: 0px 0px 37px -16px rgba(0,0,0,0.75);
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 120px;
+    box-shadow: 0px 0px 37px -16px rgba(0,0,0,0.75);
+}
+.auth_container{
+    margin-top: 60px;
+    height: 74vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-input{
+    padding: 5px 10px;
+}
+#submit-login:hover{
+    cursor: pointer;}
+#submit-login{
+    padding: 5px 10px;
+}
+.user-img_small{
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
+.flex-1{
+    flex: 1;
+}
+.profile-bar{
+    display: flex;
+    align-items: center;
+}
+.profile-bar_name{
+    margin-left: 20px;
+}
+.profile-bar_name a{
+    text-decoration: none;
+    color: #000;
+
+}

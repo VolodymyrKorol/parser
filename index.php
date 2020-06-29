@@ -1,6 +1,10 @@
-<?php include('db.php');?>
+<?php include('db.php');
+session_start();
+if(isset($_SESSION['user'])){
+    $data = $_SESSION['user'];
+}
 
-<?php
+
 require_once('blocks/header.php');
 ?>
 
