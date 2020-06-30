@@ -282,3 +282,24 @@ color:#959595;
 display: flex;
 
 }
+
+#title-edit{
+    padding: 5px;
+    height: 40px;
+    display: block;
+    width: 90%;
+}
+#text-edit{
+    overflow-y: scroll;
+    padding: 5px;
+    height: 700px;
+    padding: 20px;
+    display: block;
+    width: 90%;
+    line-height: 25px ;
+}
+.search{
+    position:absolute;
+    top: 40px;
+    right: 20px;
+}
