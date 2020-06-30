@@ -1,34 +1,38 @@
-<?php include('../db.php');?>
-
 <?php
-require_once('../blocks/header.php');
+session_start();
+if ($_SESSION['user']['status']):
+
+    include('../db.php');
+    require("../blocks/head.php"); ?>
+
+    <div class="main-admin">
+        <div class="container">
+            <?php require_once('blocks/admin_header.php'); ?>
+            <div class="content-admin main-item flex-1">
+                <div class="load-container">
+                    <span class="load-line"></span>
+                </div>
+                <div id="myDiv"></div>
+                <div id="articles_body">
+                    <h1>Admin panel</h1>
+                    <div class="admin-profile">
+                        <div class="admin-img"><img class="admin-img_img" src="<?php echo $_SESSION['user']['user_img']?>" alt="img"> </div>
+                        <div class="admin-info">
+                            <div class="admin-name"><h1><?php echo $_SESSION['user']['user_name']?></h1></div>
+                            <div class="admin-status"><h4>Status: <?php echo $_SESSION['user']['status'] == 1?"Admin": "User"?></h4></div>
+                            <div class="admin-date"> Created at: <span><?php echo $_SESSION['user']['created_at']?></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php require_once('../blocks/footer.php'); ?>
+    </div>
+<?php
+else:
+    header("Location: /parser/authorize/login.php");
+endif;
 ?>
 
 
-<form class="parse-form" action="parser.php" method="post">
-    <div class="container">
-        <input class="parse-btn" name="parse" type="submit" value="Start parse">
-        <h1 id="load-status"></h1>
-    </div>
-</form>
-<hr>
-<div class="article">
-    <div class="container">
-        <div class="article-wrapper">
-            <form id="article-form">
-                <div class="container">
-                    <input type="submit"  class="articles-btn" name="article" value="Get last 3 articles">
-                </div>
-            </form>
-            <h3>The latest 3 articles</h3>
-            <div id="articles_body">
-
-            </div>
-
-        </div>
-    </div>
-</div>
-<script src="assets/js/script.js"></script>
-<?php
-require_once('../blocks/footer.php');
 

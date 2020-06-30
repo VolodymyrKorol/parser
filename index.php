@@ -3,8 +3,7 @@ session_start();
 if(isset($_SESSION['user'])){
     $data = $_SESSION['user'];
 }
-
-
+require("blocks/head.php");
 require_once('blocks/header.php');
 ?>
 

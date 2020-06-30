@@ -8,5 +8,6 @@
         </div>
     </div>
 </div>
+<script src="/parser/assets/js/script.js"></script>
 </body>
 </html>

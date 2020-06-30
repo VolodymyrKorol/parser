@@ -59,7 +59,7 @@ for ($i = 6; $i < count($matches[0]); $i++) {
     `title` = '".$article_title[0][0]."',
     `text`='".addcslashes($text,"'\"")."', 
     `date_up`='".$article_date[0][0]."',
-    `img_url`='/parser/Parser/parser/assets/images/".$filename."'";
+    `img_url`='/parser/assets/images/".$filename."'";
      $db->execute($sql);
 
 
