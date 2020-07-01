@@ -75,7 +75,7 @@ function get_article($id)
         <a href='/parser/article_operation.php?article_id=" . $_GET['article_id'] . "&operation=edit' class='article-edit'>Edit</a>
     </div>
     <div class='toolbar-item'>
-         <a href='/parser/article_operation.php?article_id=" . $_GET['article_id'] . "&operation=delete' class='article-delete'>Delete</a>
+         <a href='/parser/delete.php?article_id=" . $_GET['article_id'] . "' class='article-delete'>Delete</a>
     </div>
     
     </div>

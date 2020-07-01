@@ -301,5 +301,26 @@ display: flex;
 .search{
     position:absolute;
     top: 40px;
-    right: 20px;
+    right: 60px;
+    display: flex;
+}
+.search-input{
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+}
+#submit-search{
+    padding: 10px;
+    color: red;
+    display: block;
+
+}
+#submit-search:hover{
+    background-color: #cccccc;
+   // border: 1px solid #cccccc;
+}
+.image-edit{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
 }

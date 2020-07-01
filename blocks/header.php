@@ -14,7 +14,7 @@ $data = $_SESSION['user'];
             </div>
             <div class="menu flex-1">
                 <div class="menu-item"><a href="/parser">Home</a></div>
-                <div class="menu-item"><a href="/parser/articles.php?article_id=-1">Articles</a></div>
+                <div class="menu-item"><a href="/parser/articles.php?article_id=-1&portion=0">Articles</a></div>
 
             </div>
 

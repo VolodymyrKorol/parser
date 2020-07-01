@@ -60,7 +60,7 @@ if (isset($_POST['submit-register'])) {
 
 
 }
-
+require_once("../blocks/head.php");
 require_once('../blocks/header.php');
 ?>
 

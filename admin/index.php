@@ -14,10 +14,9 @@ if ($_SESSION['user']['status']):
                 </div>
                 <div id="myDiv"></div>
                 <div class="search">
-                        <input type="text" name="search-text" id="search-text" placeholder="What do you search?">
+                        <input class="search-input" type="text" name="search-text" id="search-text" placeholder="What do you search?">
                     <a id="submit-search" href="#">Search</a>
                 </div>
-
                 <div id="articles_body">
                     <h1>Admin panel</h1>
                     <div class="admin-profile">

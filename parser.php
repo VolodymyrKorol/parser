@@ -3,7 +3,7 @@
 
 include_once('db.php');
 include_once('curl.php');
-
+include_once('mail.php');
 
 
 $html = curl_get('http://www.dailynebraskan.com/news/');
@@ -15,8 +15,10 @@ $sql = "SELECT * FROM `articles` ORDER BY id ASC LIMIT 1";
 $last_article = $db->query($sql);
 
 preg_match_all('#<article id="card-summary-(.+?)</article>#su', $html, $matches);
+$parsed_count = 1;
 
-
+$new_articles = [];
+$new_articles_link =[];
 for ($i = 6; $i < count($matches[0]); $i++) {
     set_time_limit ( 90 );
 
@@ -57,15 +59,19 @@ for ($i = 6; $i < count($matches[0]); $i++) {
  //   save_image($article_img[0][0], $filename);
 
 
+    //var_dump( date("Y-m-d") );
 
 
-
+    $parsed_count = $i - 6;
     $sql = "SELECT * FROM `articles` WHERE `article_link`='".$article_link[0][0]."'";
     if (!empty($last_article)) {
         if ($last_article[0]['article_link'] === $article_link[0][0]) {
             break;
         }
     }
+
+    array_push($new_articles,$article_title[0][0]);
+    array_push($new_articles_link,$article_link[0][0]);
 
 
 //DATABASE SAVE
@@ -86,15 +92,15 @@ for ($i = 6; $i < count($matches[0]); $i++) {
     $text = '';
     $single_html = '';
 
-
+     $parsed_count = $i;
 
 }
+if(send_mail($parsed_count,$new_articles,$new_articles_link)) {
+    header("Location: /parser/admin/index.php?succ=1");
+}else{
+    header("Location: /parser/admin/index.php?succ=0");
+}
 
-$to = "peryjeky@gmail.com";
-$message = "Yep!";
-$m_title = "Volodymyr";
-if(mail($to,$m_title,$message,"From: volodymyr01korol@gmail.com \r\n"))
-  echo "Yeess!"  ;
-//header("Location: /parser/admin/index.php");
+
 
 

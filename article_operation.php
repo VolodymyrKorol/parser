@@ -20,7 +20,7 @@ if ($res) {
 $response = $response .
 "<div class=\"card\">
     <div class='card-container'>
-    <form action='/parser/save.php' method='post'>
+    <form action='/parser/save.php' method='post' enctype='multipart/form-data'>
     <div class=\"toolbar\">
     <div class='toolbar-container'>
         <div class='toolbar-item'>
@@ -33,6 +33,7 @@ $response = $response .
       </div>
     </div>
         <img class='article_img' src='" . "http://" . $_SERVER['HTTP_HOST'] . $res[0]['img_url'] . "' alt='img'>
+        <div class='image-edit'><input type='file' id='file-upload' name='file-upload'></div>
         <input type='text' name='id' value='".$id."' style='display: none'>
         <label for='#title'>Change article title</label>
         <h2 class=\"article_title\"><input type='text' id='title-edit' name='title' value='" . $res[0]['title'] . "'></h2>
